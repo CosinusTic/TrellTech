@@ -1,0 +1,17 @@
+﻿@using TrelloApp.Contracts.Response;
+@using Microsoft.AspNetCore.Components;
+@using TrelloApp.Contracts.Models;
+@using Components.Pages;
+@inject OrganizationService OrganizationService;
+@inject NavigationManager NavigationManager
+
+<MudNavMenu>
+    <MudNavLink Href="/" Match="NavLinkMatch.All">Dashboard</MudNavLink>
+    <MudNavLink Href="/servers" Match="NavLinkMatch.Prefix">Servers</MudNavLink>
+    <MudNavGroup Title="Settings" Expanded="true">
+        <MudNavLink Href="/users"  Match="NavLinkMatch.Prefix">Users</MudNavLink>
+        <MudNavLink Href="/security"  Match="NavLinkMatch.Prefix">Security</MudNavLink>
+    </MudNavGroup>
+    <MudNavLink Href="/BoardPage"  Match="NavLinkMatch.Prefix">BoardPage</MudNavLink>
+    <MudNavLink Href="/TestPage"  Match="NavLinkMatch.Prefix">TestPage</MudNavLink>
+</MudNavMenu>

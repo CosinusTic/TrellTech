@@ -1,0 +1,28 @@
+@page "/testPage"
+
+@using Microsoft.AspNetCore.Components
+@using System.ComponentModel.DataAnnotations
+@using TrelloApp.Contracts.Request
+@using TrelloApp.Contracts.Models
+@using Microsoft.AspNetCore.Components
+@using System.ComponentModel.DataAnnotations
+@using TrelloApp.Components.Pages.Components
+
+@inject BoardService BoardService;
+@inject ListService ListService;
+@inject OrganizationService OrganizationService;
+@inject CardService CardService;
+
+
+<MudContainer MaxWidth="MaxWidth.Large">
+    <MudTabs Elevation="2" Rounded="true" Centered="true" Class="my-6" Color="Color.Dark">
+        <MudTabPanel Icon="@Icons.Material.Filled.Api" Text="Kanban">
+            <Kanban />
+        </MudTabPanel>
+        <MudTabPanel Icon="@Icons.Material.Filled.BugReport" Text="Table">
+            <Table />
+        </MudTabPanel>
+    </MudTabs>
+</MudContainer>
+
+

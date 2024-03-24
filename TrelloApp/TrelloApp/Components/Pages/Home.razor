@@ -1,0 +1,28 @@
+﻿@page "/"
+@using TrelloApp.Contracts.Response
+@using TrelloApp.Contracts.Request;
+@using TrelloApp.Contracts.Models;
+@inject OrganizationService OrganizationService;
+
+<MudGrid>
+    <MudText>Add an Organization</MudText>
+    <MudItem xs="12" sm="7">
+        <MudPaper Class="pa-4">
+            <MudTextField Label="Organization Name" @bind-Value="_orgNameInput" Required="true"/>
+            <MudButton OnClick="async () => await HandleSubmit()">Submit</MudButton>
+        </MudPaper>
+    </MudItem>
+</MudGrid>
+
+
+@code {
+    private string? _orgNameInput;
+
+    private async Task<Organization> HandleSubmit()
+    {
+        return await OrganizationService.CreateOrganization(new CreateOrganizationRequest()
+        {
+            DisplayName = _orgNameInput
+        });    
+    }
+}

@@ -1,0 +1,45 @@
+{
+  "Files": [
+    {
+      "Id": "/home/nathan/Documents/Dotnet/TrellTech/TrelloApp/TrelloApp/obj/Debug/net8.0-android/scopedcss/bundle/TrelloApp.styles.css",
+      "PackagePath": "staticwebassets/TrelloApp.styles.css"
+    },
+    {
+      "Id": "/home/nathan/Documents/Dotnet/TrellTech/TrelloApp/TrelloApp/wwwroot/css/app.css",
+      "PackagePath": "staticwebassets/css/app.css"
+    },
+    {
+      "Id": "/home/nathan/Documents/Dotnet/TrellTech/TrelloApp/TrelloApp/wwwroot/css/bootstrap/bootstrap.min.css",
+      "PackagePath": "staticwebassets/css/bootstrap/bootstrap.min.css"
+    },
+    {
+      "Id": "/home/nathan/Documents/Dotnet/TrellTech/TrelloApp/TrelloApp/wwwroot/css/bootstrap/bootstrap.min.css.map",
+      "PackagePath": "staticwebassets/css/bootstrap/bootstrap.min.css.map"
+    },
+    {
+      "Id": "/home/nathan/Documents/Dotnet/TrellTech/TrelloApp/TrelloApp/wwwroot/favicon.png",
+      "PackagePath": "staticwebassets/favicon.png"
+    },
+    {
+      "Id": "/home/nathan/Documents/Dotnet/TrellTech/TrelloApp/TrelloApp/wwwroot/index.html",
+      "PackagePath": "staticwebassets/index.html"
+    },
+    {
+      "Id": "obj/Debug/net8.0-android/staticwebassets/msbuild.TrelloApp.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0-android/staticwebassets/msbuild.build.TrelloApp.props",
+      "PackagePath": "build\\TrelloApp.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0-android/staticwebassets/msbuild.buildMultiTargeting.TrelloApp.props",
+      "PackagePath": "buildMultiTargeting\\TrelloApp.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0-android/staticwebassets/msbuild.buildTransitive.TrelloApp.props",
+      "PackagePath": "buildTransitive\\TrelloApp.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

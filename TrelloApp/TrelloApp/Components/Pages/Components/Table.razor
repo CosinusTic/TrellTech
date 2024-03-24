@@ -1,0 +1,265 @@
+@using TrelloApp.Contracts.Models
+@using TrelloApp.Contracts.Response
+@using TrelloApp.ApiTrello.Service
+@using Microsoft.AspNetCore.Components
+@using System.ComponentModel.DataAnnotations
+@using TrelloApp.Contracts.Request
+@using Microsoft.AspNetCore.Components
+@using System.ComponentModel.DataAnnotations
+@using TrelloApp.ApiTrello
+@inject BoardService BoardService
+@inject CardService CardService;
+@inject ListService ListService;
+@inject OrganizationService OrganizationService
+@inject ISnackbar Snackbar
+
+<MudTable Items="@Rows" Dense="@dense" Hover="@hover" ReadOnly="@ronly" CanCancelEdit="@canCancelEdit" Filter="new Func<RowElement,bool>(FilterFunc)"
+          @bind-SelectedItem="selectedItem1" SortLabel="Sort By" CommitEditTooltip="Commit Edit"
+          OnCommitEditClick="@(() => Snackbar.Add("Commit Edit Handler Invoked"))" RowEditPreview="BackupItem" RowEditCancel="ResetItemToOriginalValues"
+          RowEditCommit="ItemHasBeenCommitted" IsEditRowSwitchingBlocked="@blockSwitch" ApplyButtonPosition="@applyButtonPosition" EditButtonPosition="@editButtonPosition" EditTrigger="@editTrigger">
+    <ToolBarContent>
+        <MudText Typo="Typo.h6">Card List</MudText>
+        <MudSpacer />
+        <MudTextField @bind-Value="searchString" Placeholder="Search" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
+    </ToolBarContent>
+    <ColGroup>
+        @if (applyButtonPosition.DisplayApplyButtonAtStart() || (editButtonPosition.DisplayEditButtonAtStart() && editTrigger == TableEditTrigger.EditButton))
+        {
+            <col style="width:50px;" />
+        }
+        <col style="width:50px;" />
+        <col style="width:80px;" />
+        <col style="width:50%;" />
+        <col />
+        <col />
+        @if (applyButtonPosition.DisplayApplyButtonAtEnd() || (editButtonPosition.DisplayEditButtonAtEnd() && editTrigger == TableEditTrigger.EditButton))
+        {
+            <col style="width:50px;" />
+        }
+    </ColGroup>
+    <HeaderContent>
+        <MudTh><MudTableSortLabel SortBy="new Func<RowElement, object?>(x=>x.Name)">Name</MudTableSortLabel></MudTh>
+        <MudTh><MudTableSortLabel SortBy="new Func<RowElement, object?>(x=>x.ListName)">List</MudTableSortLabel></MudTh>
+        <MudTh><MudTableSortLabel InitialDirection="SortDirection.Ascending" SortBy="new Func<Card, object?>(x=>x.Name)">Labels</MudTableSortLabel></MudTh>
+        <MudTh><MudTableSortLabel SortBy="new Func<RowElement, object?>(x=>x.Labels)">Members</MudTableSortLabel></MudTh>
+        <MudTh><MudTableSortLabel SortBy="new Func<RowElement, object?>(x=>x.Members)">Due</MudTableSortLabel></MudTh>
+    </HeaderContent>
+    <RowTemplate>
+        <MudTd DataLabel="Name">@context.Name</MudTd>
+        <MudTd DataLabel="List">@context.ListName</MudTd>
+        <MudTd DataLabel="Labels">@context.Labels</MudTd>
+        <MudTd DataLabel="Members">
+            @if (@context.Members.Count>0)
+            {
+                foreach (var member in @context.Members)
+                {
+                    <MemberChip Member="member"/>
+                }
+            }
+            else
+            {
+                <MudText>"no members"</MudText>
+            }
+            
+        </MudTd>
+        <MudTd DataLabel="Due">@context.Due</MudTd>
+    </RowTemplate>
+    <RowEditingTemplate>
+        <MudTd DataLabel="Name">@context.Name</MudTd>
+        <MudTd DataLabel="List">
+            <MudTextField @bind-Value="@context.ListName" Required />
+        </MudTd>
+        <MudTd DataLabel="Labels">
+            <MudTextField @bind-Value="@context.Labels" Required />
+        </MudTd>
+        <MudTd DataLabel="Members">
+            <MudTextField @bind-Value="@context.Members" Required Min="1"/>
+        </MudTd>
+        <MudTd DataLabel="Due">
+            <MudTextField @bind-Value="@context.Due" Required />
+        </MudTd>
+    </RowEditingTemplate>
+    <PagerContent>
+        <MudTablePager />
+    </PagerContent>
+    <EditButtonContent Context="button">
+        <MudIconButton Size="@Size.Small" Icon="@Icons.Material.Outlined.Edit" Class="pa-0" OnClick="@button.ButtonAction" Disabled="@button.ButtonDisabled" />
+    </EditButtonContent>
+</MudTable>
+
+<MudSwitch @bind-Checked="@hover" Color="Color.Primary">Hover</MudSwitch>
+<MudSwitch @bind-Checked="@dense" Color="Color.Secondary">Dense</MudSwitch>
+<MudSwitch @bind-Checked="@ronly" Color="Color.Tertiary">Read Only</MudSwitch>
+<MudSwitch @bind-Checked="@canCancelEdit" Color="Color.Info">Can Cancel Edit</MudSwitch>
+<MudSwitch @bind-Checked="@blockSwitch" Color="Color.Success">Block Edit Row Switching</MudSwitch>
+<MudGrid>
+    <MudItem xs="12" md="4">
+        <MudSelect Label="Edit Trigger" T="TableEditTrigger" @bind-Value="editTrigger">
+            <MudSelectItem Value="TableEditTrigger.RowClick">Row Click</MudSelectItem>
+            <MudSelectItem Value="TableEditTrigger.EditButton">Edit Button</MudSelectItem>
+        </MudSelect>
+    </MudItem>
+    @if (editTrigger == TableEditTrigger.EditButton)
+    {
+        <MudItem xs="12" md="4">
+            <MudSelect Label="Edit Button Postion" T="TableEditButtonPosition" @bind-Value="editButtonPosition">
+                <MudSelectItem Value="TableEditButtonPosition.Start">Start</MudSelectItem>
+                <MudSelectItem Value="TableEditButtonPosition.End">End</MudSelectItem>
+                <MudSelectItem Value="TableEditButtonPosition.StartAndEnd">Start and End</MudSelectItem>
+            </MudSelect>
+        </MudItem>
+    }
+    <MudItem xs="12" md="4">
+        <MudSelect Label="Apply Button Postion" T="TableApplyButtonPosition" @bind-Value="applyButtonPosition">
+            <MudSelectItem Value="TableApplyButtonPosition.Start">Start</MudSelectItem>
+            <MudSelectItem Value="TableApplyButtonPosition.End">End</MudSelectItem>
+            <MudSelectItem Value="TableApplyButtonPosition.StartAndEnd">Start and End</MudSelectItem>
+        </MudSelect>
+    </MudItem>
+</MudGrid>
+
+<MudText Inline="true">Selected1: @selectedItem1?.Name</MudText>
+
+<MudExpansionPanels Style="flex: 1;">
+    <MudExpansionPanel Text="Show inline-edit event log">
+        @foreach (var message in editEvents)
+        {
+            <MudText>@message</MudText>
+        }
+        @if (editEvents.Count > 0)
+        {
+            <div class="d-flex">
+                <MudSpacer />
+                <MudButton Class="mt-3" ButtonType="ButtonType.Button" Variant="Variant.Filled" OnClick="ClearEventLog">Clear event log</MudButton>
+            </div>
+        }
+    </MudExpansionPanel>
+</MudExpansionPanels>
+
+@code {
+    private List<string> editEvents = new();
+    private bool dense = false;
+    private bool hover = true;
+    private bool ronly = false;
+    private bool canCancelEdit = false;
+    private bool blockSwitch = false;
+    private string searchString = "";
+    private RowElement selectedItem1 = null;
+    private RowElement elementBeforeEdit;
+    private HashSet<RowElement> selectedItems1 = new HashSet<RowElement>();
+    private TableApplyButtonPosition applyButtonPosition = TableApplyButtonPosition.End;
+    private TableEditButtonPosition editButtonPosition = TableEditButtonPosition.End;
+    private TableEditTrigger editTrigger = TableEditTrigger.RowClick;
+    private List<Card> Cards = new List<Card>();
+    private List<RowElement> Rows = new List<RowElement>();
+    private string boardId = "65f03219ed0abce6afd5dd2a";
+    
+
+    protected override async Task OnInitializedAsync()
+    {
+        
+        var lists = await BoardService.GetBoardLists(boardId);
+
+        foreach (var list in lists)
+        {
+            var listTasks = await ListService.GetListCards(list.Id);
+			
+            foreach (var task in listTasks)
+            {
+                Cards.Add(task);
+            }
+        }
+        
+        MapToRows(Cards);
+    }
+
+    private async void MapToRows(List<Card> cards)
+    {
+        Rows.Clear();
+        foreach (var card in cards)
+        {
+            List<Member> membersNames = new List<Member>();
+            string? fetchedListName = (await ListService.GetListById(card.IdList, boardId)).Name;
+            
+            if (card.IdMembers != null)
+            {
+                foreach (var id in card.IdMembers)
+                {
+                    membersNames.Add(await BoardService.GetMemberById((string)id));
+                    
+                }
+            }
+            if (card.Labels != null)
+            {
+                var labelsString = string.Join(", ", card.Labels.Select(label => label.ToString()));
+
+            }
+
+            Rows.Add(new RowElement()
+                {
+                    Name = card.Name,
+                    ListName = fetchedListName,
+                    Due = card.Due,
+                    Members = membersNames,
+                    Labels = "nullS",
+                    Desc = card.Desc
+                });
+            }
+        }
+    
+
+    private void ClearEventLog()
+    {
+        editEvents.Clear();
+    }
+
+    private void AddEditionEvent(string message)
+    {
+        editEvents.Add(message);
+        StateHasChanged();
+    }
+
+    private void BackupItem(object element)
+    {
+        elementBeforeEdit = new()
+            {
+                Name = ((RowElement)element).Name,
+                ListName = ((RowElement)element).ListName,
+                Labels = ((RowElement)element).Labels,
+                Members = ((RowElement)element).Members,
+                Due = ((RowElement)element).Due,
+                Desc = ((RowElement)element).Desc
+            };
+        AddEditionEvent($"RowEditPreview event: made a backup of Card {((RowElement)element).Name}");
+    }
+
+    private void ItemHasBeenCommitted(object element)
+    {
+        AddEditionEvent($"RowEditCommit event: Changes to Card {((RowElement)element).Name} committed");
+    }
+
+    private void ResetItemToOriginalValues(object element)
+    {
+        ((RowElement)element).Name = elementBeforeEdit.Name;
+        ((RowElement)element).ListName = elementBeforeEdit.ListName;
+        ((RowElement)element).Labels = elementBeforeEdit.Labels;
+        ((RowElement)element).Members = elementBeforeEdit.Members;
+        ((RowElement)element).Desc = elementBeforeEdit.Desc;
+        AddEditionEvent($"RowEditCancel event: Editing of Card {((Card)element).Name} canceled");
+    }
+
+    private bool FilterFunc(RowElement element)
+    {
+        if (string.IsNullOrWhiteSpace(searchString))
+            return true;
+        if (element.Name.Contains(searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+        if (element.ListName.Contains(searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+        if (element.Desc.Contains(searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+        if ($"{element.Name} {element.ListName} {element.Desc}".Contains(searchString))
+            return true;
+        return false;
+    }
+}

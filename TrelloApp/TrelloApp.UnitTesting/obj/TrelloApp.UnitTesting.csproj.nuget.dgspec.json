@@ -1,0 +1,80 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/nathan/Documents/Dotnet/TrellTech/TrelloApp/TrelloApp.UnitTesting/TrelloApp.UnitTesting.csproj": {}
+  },
+  "projects": {
+    "/home/nathan/Documents/Dotnet/TrellTech/TrelloApp/TrelloApp.UnitTesting/TrelloApp.UnitTesting.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/nathan/Documents/Dotnet/TrellTech/TrelloApp/TrelloApp.UnitTesting/TrelloApp.UnitTesting.csproj",
+        "projectName": "TrelloApp.UnitTesting",
+        "projectPath": "/home/nathan/Documents/Dotnet/TrellTech/TrelloApp/TrelloApp.UnitTesting/TrelloApp.UnitTesting.csproj",
+        "packagesPath": "/home/nathan/.nuget/packages/",
+        "outputPath": "/home/nathan/Documents/Dotnet/TrellTech/TrelloApp/TrelloApp.UnitTesting/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/nathan/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "/usr/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.8.0, )"
+            },
+            "coverlet.collector": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.5.3, )"
+            },
+            "xunit.runner.visualstudio": {
+              "target": "Package",
+              "version": "[2.5.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.202/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

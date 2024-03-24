@@ -1,0 +1,174 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/nathan/Documents/Dotnet/TrellTech/TrelloApp/TrelloApp.ApiTrello/TrelloApp.ApiTrello.csproj": {}
+  },
+  "projects": {
+    "/home/nathan/Documents/Dotnet/TrellTech/TrelloApp/TrelloApp.ApiTrello/TrelloApp.ApiTrello.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/nathan/Documents/Dotnet/TrellTech/TrelloApp/TrelloApp.ApiTrello/TrelloApp.ApiTrello.csproj",
+        "projectName": "TrelloApp.ApiTrello",
+        "projectPath": "/home/nathan/Documents/Dotnet/TrellTech/TrelloApp/TrelloApp.ApiTrello/TrelloApp.ApiTrello.csproj",
+        "packagesPath": "/home/nathan/.nuget/packages/",
+        "outputPath": "/home/nathan/Documents/Dotnet/TrellTech/TrelloApp/TrelloApp.ApiTrello/obj/",
+        "projectStyle": "PackageReference",
+        "crossTargeting": true,
+        "configFilePaths": [
+          "/home/nathan/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0-android"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0-android34.0": {
+            "targetAlias": "net8.0-android",
+            "projectReferences": {
+              "/home/nathan/Documents/Dotnet/TrellTech/TrelloApp/TrelloApp.Contracts/TrelloApp.Contracts.csproj": {
+                "projectPath": "/home/nathan/Documents/Dotnet/TrellTech/TrelloApp/TrelloApp.Contracts/TrelloApp.Contracts.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0-android34.0": {
+          "targetAlias": "net8.0-android",
+          "dependencies": {
+            "Microsoft.Extensions.Caching.Memory": {
+              "target": "Package",
+              "version": "[9.0.0-preview.2.24128.5, )"
+            },
+            "Microsoft.Extensions.Http": {
+              "target": "Package",
+              "version": "[9.0.0-preview.1.24080.9, )"
+            },
+            "Microsoft.Maui.Controls": {
+              "target": "Package",
+              "version": "[8.0.7, )"
+            },
+            "Microsoft.Maui.Controls.Compatibility": {
+              "target": "Package",
+              "version": "[8.0.7, )"
+            },
+            "MudBlazor": {
+              "target": "Package",
+              "version": "[6.17.0, )"
+            },
+            "Refit": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Refit.HttpClientFactory": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Serilog.Settings.Configuration": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.Android": {
+              "privateAssets": "all"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.202/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/nathan/Documents/Dotnet/TrellTech/TrelloApp/TrelloApp.Contracts/TrelloApp.Contracts.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/nathan/Documents/Dotnet/TrellTech/TrelloApp/TrelloApp.Contracts/TrelloApp.Contracts.csproj",
+        "projectName": "TrelloApp.Contracts",
+        "projectPath": "/home/nathan/Documents/Dotnet/TrellTech/TrelloApp/TrelloApp.Contracts/TrelloApp.Contracts.csproj",
+        "packagesPath": "/home/nathan/.nuget/packages/",
+        "outputPath": "/home/nathan/Documents/Dotnet/TrellTech/TrelloApp/TrelloApp.Contracts/obj/",
+        "projectStyle": "PackageReference",
+        "crossTargeting": true,
+        "configFilePaths": [
+          "/home/nathan/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0-android"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0-android34.0": {
+            "targetAlias": "net8.0-android",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0-android34.0": {
+          "targetAlias": "net8.0-android",
+          "dependencies": {
+            "Microsoft.Maui.Controls": {
+              "target": "Package",
+              "version": "[8.0.7, )"
+            },
+            "Microsoft.Maui.Controls.Compatibility": {
+              "target": "Package",
+              "version": "[8.0.7, )"
+            },
+            "MudBlazor": {
+              "target": "Package",
+              "version": "[6.17.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.Android": {
+              "privateAssets": "all"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.202/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

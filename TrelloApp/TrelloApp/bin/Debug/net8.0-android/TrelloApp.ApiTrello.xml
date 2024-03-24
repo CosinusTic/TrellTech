@@ -1,0 +1,203 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TrelloApp.ApiTrello</name>
+    </assembly>
+    <members>
+        <member name="T:Refit.Implementation.Generated">
+            <inheritdoc />
+        </member>
+        <member name="T:Refit.Implementation.Generated.TrelloAppApiTrelloAPIIBoard">
+            <inheritdoc />
+        </member>
+        <member name="P:Refit.Implementation.Generated.TrelloAppApiTrelloAPIIBoard.Client">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.TrelloAppApiTrelloAPIIBoard.#ctor(System.Net.Http.HttpClient,Refit.IRequestBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.TrelloAppApiTrelloAPIIBoard.AddListToBoardAsync(TrelloApp.Contracts.Request.AddListToBoardRequest,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.TrelloAppApiTrelloAPIIBoard.GetBoardByIdAsync(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.TrelloAppApiTrelloAPIIBoard.GetBoardListsAsync(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.TrelloAppApiTrelloAPIIBoard.UpdateBoardAsync(System.String,TrelloApp.Contracts.Request.UpdateBoardRequest)">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.TrelloAppApiTrelloAPIIBoard.DeleteBoardAsync(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.TrelloAppApiTrelloAPIIBoard.GetBoardMembersAsync(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.TrelloAppApiTrelloAPIIBoard.InviteViaEmailAsync(TrelloApp.Contracts.Request.EmailInviteToBoardRequest,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.TrelloAppApiTrelloAPIIBoard.DeleteMemberAsync(System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.TrelloAppApiTrelloAPIIBoard.GetMemberNameASync(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.TrelloAppApiTrelloAPIIBoard.TrelloApp#ApiTrello#API#IBoard#AddListToBoardAsync(TrelloApp.Contracts.Request.AddListToBoardRequest,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.TrelloAppApiTrelloAPIIBoard.TrelloApp#ApiTrello#API#IBoard#GetBoardByIdAsync(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.TrelloAppApiTrelloAPIIBoard.TrelloApp#ApiTrello#API#IBoard#GetBoardListsAsync(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.TrelloAppApiTrelloAPIIBoard.TrelloApp#ApiTrello#API#IBoard#UpdateBoardAsync(System.String,TrelloApp.Contracts.Request.UpdateBoardRequest)">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.TrelloAppApiTrelloAPIIBoard.TrelloApp#ApiTrello#API#IBoard#DeleteBoardAsync(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.TrelloAppApiTrelloAPIIBoard.TrelloApp#ApiTrello#API#IBoard#GetBoardMembersAsync(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.TrelloAppApiTrelloAPIIBoard.TrelloApp#ApiTrello#API#IBoard#InviteViaEmailAsync(TrelloApp.Contracts.Request.EmailInviteToBoardRequest,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.TrelloAppApiTrelloAPIIBoard.TrelloApp#ApiTrello#API#IBoard#DeleteMemberAsync(System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.TrelloAppApiTrelloAPIIBoard.TrelloApp#ApiTrello#API#IBoard#GetMemberNameASync(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="T:Refit.Implementation.Generated.TrelloAppApiTrelloAPIICard">
+            <inheritdoc />
+        </member>
+        <member name="P:Refit.Implementation.Generated.TrelloAppApiTrelloAPIICard.Client">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.TrelloAppApiTrelloAPIICard.#ctor(System.Net.Http.HttpClient,Refit.IRequestBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.TrelloAppApiTrelloAPIICard.CreateCardAsync(TrelloApp.Contracts.Request.CreateCardRequest)">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.TrelloAppApiTrelloAPIICard.GetCardByIdAsync(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.TrelloAppApiTrelloAPIICard.UpdateCardAsync(TrelloApp.Contracts.Request.UpdateCardRequest,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.TrelloAppApiTrelloAPIICard.DeleteCardAsync(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.TrelloAppApiTrelloAPIICard.TrelloApp#ApiTrello#API#ICard#CreateCardAsync(TrelloApp.Contracts.Request.CreateCardRequest)">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.TrelloAppApiTrelloAPIICard.TrelloApp#ApiTrello#API#ICard#GetCardByIdAsync(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.TrelloAppApiTrelloAPIICard.TrelloApp#ApiTrello#API#ICard#UpdateCardAsync(TrelloApp.Contracts.Request.UpdateCardRequest,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.TrelloAppApiTrelloAPIICard.TrelloApp#ApiTrello#API#ICard#DeleteCardAsync(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="T:Refit.Implementation.Generated.TrelloAppApiTrelloAPIIList">
+            <inheritdoc />
+        </member>
+        <member name="P:Refit.Implementation.Generated.TrelloAppApiTrelloAPIIList.Client">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.TrelloAppApiTrelloAPIIList.#ctor(System.Net.Http.HttpClient,Refit.IRequestBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.TrelloAppApiTrelloAPIIList.CreateListAsync(TrelloApp.Contracts.Request.CreateListRequest)">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.TrelloAppApiTrelloAPIIList.GetListAsync(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.TrelloAppApiTrelloAPIIList.GetListCardsAsync(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.TrelloAppApiTrelloAPIIList.UpdateListAsync(TrelloApp.Contracts.Request.UpdateListRequest,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.TrelloAppApiTrelloAPIIList.ToggleArchiveAsync(TrelloApp.Contracts.Request.ToggleArchiveListRequest,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.TrelloAppApiTrelloAPIIList.TrelloApp#ApiTrello#API#IList#CreateListAsync(TrelloApp.Contracts.Request.CreateListRequest)">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.TrelloAppApiTrelloAPIIList.TrelloApp#ApiTrello#API#IList#GetListAsync(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.TrelloAppApiTrelloAPIIList.TrelloApp#ApiTrello#API#IList#GetListCardsAsync(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.TrelloAppApiTrelloAPIIList.TrelloApp#ApiTrello#API#IList#UpdateListAsync(TrelloApp.Contracts.Request.UpdateListRequest,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.TrelloAppApiTrelloAPIIList.TrelloApp#ApiTrello#API#IList#ToggleArchiveAsync(TrelloApp.Contracts.Request.ToggleArchiveListRequest,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="T:Refit.Implementation.Generated.TrelloAppApiTrelloAPIIOrganization">
+            <inheritdoc />
+        </member>
+        <member name="P:Refit.Implementation.Generated.TrelloAppApiTrelloAPIIOrganization.Client">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.TrelloAppApiTrelloAPIIOrganization.#ctor(System.Net.Http.HttpClient,Refit.IRequestBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.TrelloAppApiTrelloAPIIOrganization.CreateOrganizationAsync(TrelloApp.Contracts.Request.CreateOrganizationRequest)">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.TrelloAppApiTrelloAPIIOrganization.GetOrganizationByIdAsync(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.TrelloAppApiTrelloAPIIOrganization.GetOrganizationByUserAsync">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.TrelloAppApiTrelloAPIIOrganization.GetOrganizationMembersAsync(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.TrelloAppApiTrelloAPIIOrganization.GetOrganizationBoardsAsync(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.TrelloAppApiTrelloAPIIOrganization.AddOrganizationBoardAsync(TrelloApp.Contracts.Request.AddBoardToOrganizationRequest)">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.TrelloAppApiTrelloAPIIOrganization.UpdateOrganizationAsync(TrelloApp.Contracts.Request.UpdateOrganizationRequest,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.TrelloAppApiTrelloAPIIOrganization.DeleteOrganizationAsync(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.TrelloAppApiTrelloAPIIOrganization.TrelloApp#ApiTrello#API#IOrganization#CreateOrganizationAsync(TrelloApp.Contracts.Request.CreateOrganizationRequest)">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.TrelloAppApiTrelloAPIIOrganization.TrelloApp#ApiTrello#API#IOrganization#GetOrganizationByIdAsync(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.TrelloAppApiTrelloAPIIOrganization.TrelloApp#ApiTrello#API#IOrganization#GetOrganizationByUserAsync">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.TrelloAppApiTrelloAPIIOrganization.TrelloApp#ApiTrello#API#IOrganization#GetOrganizationMembersAsync(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.TrelloAppApiTrelloAPIIOrganization.TrelloApp#ApiTrello#API#IOrganization#GetOrganizationBoardsAsync(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.TrelloAppApiTrelloAPIIOrganization.TrelloApp#ApiTrello#API#IOrganization#AddOrganizationBoardAsync(TrelloApp.Contracts.Request.AddBoardToOrganizationRequest)">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.TrelloAppApiTrelloAPIIOrganization.TrelloApp#ApiTrello#API#IOrganization#UpdateOrganizationAsync(TrelloApp.Contracts.Request.UpdateOrganizationRequest,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Refit.Implementation.Generated.TrelloAppApiTrelloAPIIOrganization.TrelloApp#ApiTrello#API#IOrganization#DeleteOrganizationAsync(System.String)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

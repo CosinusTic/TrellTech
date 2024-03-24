@@ -1,0 +1,16 @@
+@using TrelloApp.Contracts.Models
+@using MudBlazor
+
+<MudChip>
+    <AvatarContent>
+        <MudAvatar>
+            <MudImage Src="@Member?.AvatarUrl"></MudImage>
+        </MudAvatar>
+    </AvatarContent>
+    <ChildContent>@Member?.FullName</ChildContent>
+</MudChip>
+
+@code {
+    [Parameter]
+    public Member? Member { get; set; }
+}
